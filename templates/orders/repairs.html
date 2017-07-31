@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-repairs">
+    <div class="row">
+    <h3 class="text-center">Стоимость услуг по ремонту iPhone</h3>
+        <p class="text-center">Запчасти для ремонта уже включены в стоимость работы.
+        <br><strong>Это окончательная цена</strong><br></p>
+            <div class="visible">
+             <input type="text" id="SearchInputRepairs" onkeyup="SearchTableRepairs()"
+                    placeholder="Введите для поиска...">
+            </div>
+        <table id="SearchRepairsOnTable" class="table table-bordered table-hover text-center table-price">
+{#Заголовок таблицы-прайса#}
+            <thead class="thead-repairs">
+                <tr>
+                    <th>Наши услуги</th>
+                    <th>iPhone 4/4s</th>
+                    <th>iPhone 5/5s/5c</th>
+                    <th>iPhone 6/6+</th>
+                    <th>iPhone 6s</th>
+                    <th>iPhone 6s+</th>
+                </tr>
+            </thead>
+                <tbody>
+{#1 строка таблицы-прайса#}
+                    <tr>
+                        <td>Ремонт модуля</td>
+                        <td>1600 ₽</td>
+                        <td>2800 ₽</td>
+                        <td>4000 ₽ / 4600 ₽</td>
+                        <td>4700 ₽ (Китай) / 7500 ₽ (оригинал)</td>
+                        <td>-</td>
+                    </tr>
+{#2 строка таблицы-прайса#}
+                        <tr>
+                            <td>Ремонт нижнего шлейфа (зарядка)</td>
+                            <td>800 ₽</td>
+                            <td>1200 ₽</td>
+                            <td>1400 ₽ / 1600 ₽</td>
+                            <td>1600 ₽</td>
+                            <td>1800 ₽</td>
+                        </tr>
+{#3 строка таблицы-прайса#}
+                        <tr>
+                            <td>Аккумуляторная батарея</td>
+                            <td>800 ₽</td>
+                            <td>800 ₽ (Китай) / 1200 ₽ (оригинал)</td>
+                            <td>1600 ₽ / 1800 ₽</td>
+                            <td>1600 ₽ (Китай) / 2000 ₽ (оригинал)</td>
+                            <td>1800 ₽ / 2000 ₽</td>
+                        </tr>
+{#4 строка таблицы-прайса#}
+                        <tr>
+                            <td>Динамик (speaker)</td>
+                            <td>800 ₽</td>
+                            <td>800 ₽</td>
+                            <td>800 ₽
+                            </td>
+                            <td>1200 ₽<h6>(из-за проклейки корпуса)</h6></td>
+                            <td>1200 ₽<h6>(из-за проклейки корпуса)</h6></td>
+                        </tr>
+{#5 строка таблицы-прайса#}
+                        <tr>
+                            <td>Динамик полифонии</td>
+                            <td>800 ₽</td>
+                            <td>800 ₽</td>
+                            <td>1200 ₽ / 4600 ₽</td>
+                            <td>1200 ₽<h6>(из-за проклейки корпуса)</h6></td>
+                            <td>1200 ₽<h6>(из-за проклейки корпуса)</h6></td>
+                        </tr>
+{#6 строка таблицы-прайса#}
+                        <tr>
+                            <td>Камера передняя (шлейф)</td>
+                            <td>800 ₽</td>
+                            <td>1200 ₽</td>
+                            <td>1400 ₽ / 1600 ₽</td>
+                            <td>1600 ₽</td>
+                            <td>1600 ₽</td>
+                        </tr>
+{#7 строка таблицы-прайса#}
+                        <tr>
+                            <td>Камеря задняя</td>
+                            <td>800 ₽</td>
+                            <td>1200 ₽</td>
+                            <td>1600 ₽ / 1800 ₽</td>
+                            <td>1600 ₽</td>
+                            <td>1800 ₽</td>
+                        </tr>
+{#8 строка таблицы-прайса#}
+                        <tr>
+                            <td>Датчик света / приближения</td>
+                            <td>800 ₽</td>
+                            <td>1200 ₽</td>
+                            <td>1400 ₽ / 1600 ₽</td>
+                            <td>1600 ₽</td>
+                            <td>1600 ₽</td>
+                        </tr>
+{#9 строка таблицы-прайса#}
+                        <tr>
+                            <td>Вспышка (камера задняя)</td>
+                            <td>800 ₽</td>
+                            <td>1200 ₽</td>
+                            <td>1600 ₽ / 1800 ₽</td>
+                            <td>1600 ₽</td>
+                            <td>1800 ₽</td>
+                        </tr>
+{#10 строка таблицы-прайса#}
+                        <tr>
+                            <td>Микрофон (нижний шлейф)</td>
+                            <td>800 ₽</td>
+                            <td>1200 ₽</td>
+                            <td>1400 ₽ / 1600 ₽</td>
+                            <td>1600 ₽</td>
+                            <td>1800 ₽</td>
+                        </tr>
+{#11 строка таблицы-прайса#}
+                        <tr>
+                            <td>Разъем наушников (нижний шлейф)</td>
+                            <td>800 ₽</td>
+                            <td>1200 ₽</td>
+                            <td>1400 ₽ / 1600 ₽</td>
+                            <td>1600 ₽</td>
+                            <td>1800 ₽</td>
+                        </tr>
+{#12 строка таблицы-прайса#}
+                        <tr>
+                            <td>Корпус (замена)</td>
+                            <td>2000 ₽</td>
+                            <td>3200 ₽</td>
+                            <td>4000 ₽ / 4500 ₽</td>
+                            <td>4000 ₽</td>
+                            <td>4500 ₽</td>
+                        </tr>
+{#13 строка таблицы-прайса#}
+                        <tr>
+                            <td>Кнопка "HOME"</td>
+                            <td>800 ₽</td>
+                            <td>1200 ₽</td>
+                            <td>1400 ₽ / 1400 ₽</td>
+                            <td>1400 ₽</td>
+                            <td>1400 ₽</td>
+                        </tr>
+{#14 строка таблицы-прайса#}
+                        <tr>
+                            <td>Кнопка блок-громкость-беззвучный</td>
+                            <td>800 ₽</td>
+                            <td>1400 ₽</td>
+                            <td>1600 ₽ / 1800 ₽</td>
+                            <td>1600 ₽</td>
+                            <td>1800 ₽</td>
+                        </tr>
+{#15 строка таблицы-прайса#}
+                        <tr>
+                            <td>Wi-Fi антенна</td>
+                            <td>800 ₽</td>
+                            <td>1200 ₽</td>
+                            <td>1600 ₽ / 1800 ₽</td>
+                            <td>1600 ₽</td>
+                            <td>1800 ₽</td>
+                        </tr>
+{#16 строка таблицы-прайса#}
+                        <tr>
+                            <td>Вибромоторчик</td>
+                            <td>800 ₽</td>
+                            <td>1400 ₽</td>
+                            <td>1600 ₽ / 1800 ₽</td>
+                            <td>1600 ₽</td>
+                            <td>1800 ₽</td>
+                        </tr>
+                </tbody>
+        </table>
+            <script>
+                function SearchTableRepairs() {
+                  var input, filter, table, tr, td, i;
+                  input = document.getElementById("SearchInputRepairs");
+                  filter = input.value.toUpperCase();
+                  table = document.getElementById("SearchRepairsOnTable");
+                  tr = table.getElementsByTagName("tr");
+                  for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                      } else {
+                        tr[i].style.display = "none";
+                      }
+                    }
+                  }
+                }
+            </script>
+    </div>
+</div>
+{% endblock %}

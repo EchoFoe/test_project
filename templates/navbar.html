@@ -1,0 +1,101 @@
+
+<!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-top">
+    </nav>
+{#<div class="float-menu">#}
+<div class="row">
+    <nav class="navbar navbar-default navbar-main">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Voodoo Mobile</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+{#Переход на страницу Домой#}
+            <li class="active active-click">
+                <a href="/" class="">
+                    <span class="glyphicon glyphicon-home"></span>
+                    Домой </a>
+            </li>
+{#Переход на страницу с товарами в корзине #}
+              <li class="active active-click">
+                  <a href="{% url 'checkout'%}"class="">
+                      <span class="glyphicon glyphicon-shopping-cart"></span>
+                      Корзина товаров </a>
+              </li>
+{#Переход на страницу с ремонтом #}
+            <li class="active active-click">
+                <a href="{% url 'repairs'%}" class="">
+                    <span class="glyphicon glyphicon-wrench"></span>
+                    Ремонт </a>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">
+                    <div class="text-center">
+                        {% if user.is_superuser %}
+                            <h5><a href="{% url 'admin_orders'%}" target="_blank">Смотреть все заказы</a></h5>
+                        {% endif %}
+                    </div>
+                </a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+{#                   <form id="form_buying_product" action="{% url 'basket_adding' %}">{% csrf_token %}#}
+                <div class="basket-container">
+                 <a href="" class="text-color-in-basket-container">Корзина заказов
+                     <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                     <span id="basket_total_amount"></span>
+                        <span id="basket_total_nmb">
+                            {% if products_total_nmb %}
+                                ({{ products_total_nmb }})
+                            {% else %}
+                        (0)
+                            {% endif %}
+                        </span>
+                 </a>
+{#                <form id="form_buying_product" action="{% url 'basket_adding' %}">{% csrf_token %}#}
+                    <div class="basket-items hidden">
+                        <ul class="">
+                            {% for product_in_basket in products_in_basket %}
+                            <li>
+                            {{ product_in_basket.product.name }} {{ product_in_basket.nmb }} шт. по
+                                {{ product_in_basket.price_per_item }} руб.
+                                <a class="delete-item" href=""  data-product_id="{{ product_in_basket.id }}">
+                                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a>
+{#                            <form id="form_buying_product" action="{% url 'basket_adding' %}">{% csrf_token %}#}
+{#                                {{ product_in_basket.product.name }} {{ product_in_basket.nmb }} шт. по#}
+{#                                {{ product_in_basket.price_per_item }} руб.#}
+{#                                <a class="delete-item" href="" data-product_id="{{ product_in_basket.id }}" > x </a>#}
+{#                            </form>#}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+{#                </form>#}
+                </div>
+{#                   </form>#}
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+{#</div>#}
+</div>
+
+{#<span class="glyphicon glyphicon-remove" aria-hidden="true"></span>#}

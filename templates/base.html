@@ -1,0 +1,120 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Building site</title>
+
+
+    <!-- Bootstrap-->
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">#}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+{#    <link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet">#}
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+
+
+
+
+
+</head>
+<body>
+<div id="top"></div>
+    <div class="wrapper">
+        <div class ="wrapper-content">
+            {% include 'navbar.html' %}
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+
+    {% include 'modal_windows/pp.html' %}
+
+
+<div id="message"><a href="#top"><span class="glyphicon glyphicon-menu-up" aria-hidden="true"></span></a></div>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <script src="{% static 'js/scripts.js' %}"></script>
+
+</body>
+</html>
+
+{#{% load static %}#}
+{##}
+{#<!doctype html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <link rel="stylesheet" type="text/css" href="Static/style.css"/>#}
+{#    <link rel="stylesheet" type="text/css" href="Static/style.css"/>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Сайт</title>#}
+{##}
+{#    <!-- Bootstrap-->#}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">#}
+{#    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400" rel="stylesheet">#}
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">#}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap-grid.min.css">#}
+{##}
+{#    <!-- Custom styles -->#}
+{#    <link rel="stylesheet" href="{% static 'style.css' %}">#}
+{##}
+{#    <style>#}
+{#        html, body{#}
+{#            height: 100%;#}
+{#            max-height: 100%;#}
+{#        }#}
+{#        .top-container{#}
+{#            margin-top: 10%;#}
+{#        }#}
+{#    </style>#}
+{##}
+{##}
+{#</head>#}
+{#<body>#}
+{##}
+{#<div class="general-container">#}
+{#    <div class="container top-container">#}
+{#        <div class="row">#}
+{#            <div class="col-lg-8 col-lg-offset-4">#}
+{#                <h1 class="tittle>Наш магазин скоро откроется!"></h1>#}
+{#                <h1 class="tittle>Оставляйте ваши данные"></h1>#}
+{#                <div>#}
+{#                    <form action="_"method="post" class="form-inline">{% csrf_token %}#}
+{#                        <div class="form-group">#}
+{#                            <label>Ваш е-мейл:</label>#}
+{#                            {{ form.email }}#}
+{#                        </div>#}
+{#                        <div class="form-group">#}
+{#                            <label>Ваше имя:  </label>#}
+{#                            {{ form.name }}#}
+{#                        </div>#}
+{#                        <button type="submit" class="btn btn-primary">Send</button>#}
+{#                    </form>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
+{##}
+{#    <!-- jQuery -->#}
+{#    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>#}
+{#    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>#}
+{#    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>#}
+{#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>#}
+{#    <!-- Latest compiled and minified JavaScript -->#}
+{#    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>#}
+{##}
+{#</body>#}
+{#</html>#}
