@@ -33,6 +33,17 @@
                             </div>
                          </div>
                     </div>
+                    <div class="form-email">
+                        <div class="form-group">
+                            <div class="col-lg-4">
+                                <label>E-mail</label>
+                                <span class="glyphicon glyphicon-erase" aria-hidden="true"></span>
+{#                                <span class="form-error">{{ form.email.errors }}</span>#}
+                                <input type="text" name="{{ form.email.html_name }}" class="form-control text-center"
+                                        value="{{ request.POST.email }}" placeholder="Enter your e-mail...">
+                            </div>
+                         </div>
+                    </div>
 
 
                         <table class="table text-center">
