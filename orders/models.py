@@ -36,6 +36,18 @@ class Order(models.Model):#класс заказ
     def save(self, *args, **kwargs):
             super(Order, self).save(*args, **kwargs)
 
+def order_post_save(sender, instance, created, **kwargs):
+    pass
+# order=instance
+# if created:
+#     email =  SendingEmail()
+#     email.sending_email(type_id=1,order=order)
+#     email.sending_email(type_id=2, order=order.customer_email, order=order)
+
+post_save.connect(order_post_save, sender=Order)
+
+
+
 class ProductInOrder(models.Model):#класс товар (в заказе)
     order = models.ForeignKey(Order, blank=True, null=True, default=None)#поле заказ
     product = models.ForeignKey(Product, blank=True, null=True, default=None)#поле продукт

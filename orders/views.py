@@ -83,7 +83,11 @@ from .models import*
 from django.shortcuts import render
 from .forms import CheckoutContactForm
 from django.contrib.auth.models import User
-from django.db.models import Count
+from django.db.models import Count, Prefetch
+
+from itertools import chain
+from operator import itemgetter
+from utils.emails import SendingEmail
 
 
 
@@ -199,7 +203,13 @@ def repairs (request):
                     ProductInOrder.objects.create(product=product_in_basket.product, nmb = product_in_basket.nmb,
                                                   price_per_item=product_in_basket.price_per_item,
                                                   total_price = product_in_basket.total_price,
-                                                  order=product_in_basket.order)
+                                                  order=order)#order = product_in_basket.order
+
+
+            #sending notifications emails
+            email = SendingEmail()
+            email.sending_email(type_id = 1, order=order)
+            email.sending_email(type_id = 2, email=order.customer_email, order=order)
 
             return HttpResponseRedirect(request.META['HTTP_REFERER'])
         else:
