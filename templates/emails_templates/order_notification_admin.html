@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h3>Здравствуйте!</h3>
+    <p>У нас новый заказ</p>
+    <ul>
+        {% for key, value in order_fields.items %}
+            <li><b>{{ key }}:</b>{{ value }}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+
+    <ul>
+        <li>
+            <b>Имя:</b>{{ order.customer.name }}
+        </li>
+        <li>
+            <b>Е-мейл:</b>{{ order.customer.email }}
+        </li>
+        <li>
+            <b>Телефон:</b>{{ order.customer.phone }}
+        </li>
+        <li>
+            <b>Сумма:</b>{{ order.customer.total_price }}
+        </li>
+    </ul>
+        <p>
+            Товары:
+        </p>
+    <ul>
+        {% for product_in_order in products_in_order %}
+            <li>{{ product_in_order.product.name }} ({{product_in_order.nmb }} шт.
+                по {{ product_in_order.price_per_item }}={{product_in_order.total_price }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
