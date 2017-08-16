@@ -141,15 +141,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
 
 # Е-мейл настройки для рассылки по почте
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'ааа'
-EMAIL_HOST_PASSWORD = 'ыыы'
+EMAIL_HOST_USER = 'EchoFoe'
+EMAIL_HOST_PASSWORD = 'flocksfoe567124'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 FROM_EMAIL = "etoecho@gmail.com"
 EMAIL_ADMIN = "aspirpd@gmail.com"
 
-# try:
-#     from settings.prod import*
-# except:
-#     pass
+try:
+    from .settings_prod import *
+except:
+    pass

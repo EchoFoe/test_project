@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^checkout/$', views.checkout, name='checkout'),
     url(r'^repairs/$', views.repairs, name='repairs'),
     url(r'^admin_orders/$', views.admin_orders, name='admin_orders'),
+    url(r'^dashboard/$', views.dashboard, name='dashboard'),
 
 ]

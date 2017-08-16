@@ -45,7 +45,11 @@
                         {% endif %}
                     </div>
                 </a></li>
-                <li><a href="#">Another action</a></li>
+                <li><a href="#"><div class="text-center">
+                        {% if user.is_superuser %}
+                            <h5><a href="{% url 'dashboard'%}" target="_blank">Графики заказов</a></h5>
+                        {% endif %}
+                    </div></a></li>
                 <li><a href="#">Something else here</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Nav header</li>

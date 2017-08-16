@@ -17,16 +17,16 @@
 
     <ul>
         <li>
-            <b>Имя:</b>{{ order.customer.name }}
+            <b>Имя:</b>{{ order.customer_name }}
         </li>
         <li>
-            <b>Е-мейл:</b>{{ order.customer.email }}
+            <b>Е-мейл:</b>{{ order.customer_email }}
         </li>
         <li>
-            <b>Телефон:</b>{{ order.customer.phone }}
+            <b>Телефон:</b>{{ order.customer_phone }}
         </li>
         <li>
-            <b>Сумма:</b>{{ order.customer.total_price }}
+            <b>Сумма:</b>{{ order.total_price }}
         </li>
     </ul>
         <p>
@@ -34,7 +34,7 @@
         </p>
     <ul>
         {% for product_in_order in products_in_order %}
-            <li>{{ product_in_order.product.name }} ({{product_in_order.nmb }} шт.
+            <li>{{ product_in_order.product.name }} {{product_in_order.nmb }} шт.
                 по {{ product_in_order.price_per_item }}={{product_in_order.total_price }}
             </li>
         {% endfor %}
