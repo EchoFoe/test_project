@@ -216,7 +216,7 @@ def dashboard(request):
         #иначе:
         #просто создаем итерейшн из цикла, т.е. order_by_dates["orders_amount"]
 
-        if order_by_dates["Status_id"] == 3:
+        if order_by_dates["Status_id"] == 4:
             if order_by_dates["date_item"] in cancelled_orders_by_dates_dict:
                 cancelled_orders_by_dates_dict [order_by_dates["date_item"]] += order_by_dates["orders_amount"]
             else:
@@ -246,10 +246,10 @@ def dashboard(request):
     #такая же логика и для отмененных товаров
 
     charts_data = dict()
-    charts_data ["chart_orders"] = dict()
-    charts_data ["chart_orders"]["dates_list"] = dates_list
-    charts_data ["chart_orders"]["series"] = [
-        {"name": "все заказы", "data":all_orders_by_dates_data},
+    charts_data["chart_orders"] = dict()
+    charts_data["chart_orders"]["dates_list"] = dates_list
+    charts_data["chart_orders"]["series"] = [
+        {"name": "все заказы", "data": all_orders_by_dates_data},
         {"name": "отмененные заказы", "data": cancelled_orders_by_dates_data}
     ]
     # объявляем переменную charts_data
@@ -299,7 +299,7 @@ def dashboard(request):
         if isinstance(obj, (datetime, date)):
             serial = obj.isoformat()
             return serial
-        elif isinstance(obj, Decimal):
+        if isinstance(obj, Decimal):
             return float(obj)
 
     charts_data = json.dumps(charts_data, default=custom_serializer)# переделываем набор словарей в формат json

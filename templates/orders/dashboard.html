@@ -22,7 +22,7 @@
 
         $(document).ready(function () {
             var data = {{ charts_data|safe }}
-                console.log(data);
+            console.log(data);
             console.log(data.chart_orders.dates_list);
             console.log(data.chart_orders.series);
 
@@ -52,11 +52,13 @@
                     verticalAlign: 'middle'
                 },
 
-                plotOptions: {},
+                plotOptions: {
 
+                },
                 series: data.chart_orders.series
+            })
+        });
 
-            });
 
     </script>
 

@@ -141,8 +141,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
 
 # Е-мейл настройки для рассылки по почте
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = '2'
-EMAIL_HOST_PASSWORD = '1'
+EMAIL_HOST_USER = ';'
+EMAIL_HOST_PASSWORD = 'o'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 

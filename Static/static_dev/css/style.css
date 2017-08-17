@@ -5,6 +5,12 @@ html, body{
     font-family: 'Roboto', sans-serif;
     background-color: white;
 }
+#container_1 {
+	min-width: 310px;
+	max-width: 800px;
+	height: 400px;
+	margin: 0 auto
+}
 /*Стили контейнер ремонтов*/
 .container-repairs{
     margin-top: 100px;
