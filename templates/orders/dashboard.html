@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-lg-offset-1">
+                <h3>Графики</h3>
+                <div id="container_1" class="chart-container"></div>
+                <div id="container_2" class="chart-container"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js_stuff %}
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            var data = {{ charts_data|safe }}
+                console.log(data);
+            console.log(data.chart_orders.dates_list);
+            console.log(data.chart_orders.series);
+
+            Highcharts.chart('container_1', {
+
+                title: {
+                    text: 'Статистика по заказам'
+                },
+
+                subtitle: {
+                    text: 'Градация по статусам'
+                },
+
+                yAxis: {
+                    title: {
+                        text: 'Сумма заказов'
+                    }
+                },
+
+                xAxis: {
+                    categories: data.chart_orders.dates_list
+                },
+
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle'
+                },
+
+                plotOptions: {},
+
+                series: data.chart_orders.series
+
+            });
+
+    </script>
+
+{% endblock js_stuff %}
