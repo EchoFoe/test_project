@@ -1,0 +1,19 @@
+{% load i18n %}
+<div class="messages-container">
+
+    {% for message in messages %}
+        {% if forloop.last %}
+            {% if 'succes' in message.tags %}
+                <div class="alert alert-success alert-general text-center" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                    {% blocktrans %}{{ message }}{% endblocktrans %}
+                </div>
+        {% elif 'error' in message.tags %}
+            <div class="alert alert-danger alert-general text-center" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                {% blocktrans %}{{ message }}{% endblocktrans %}
+            </div>
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+</div>

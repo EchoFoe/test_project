@@ -49,8 +49,15 @@
                         {% if user.is_superuser %}
                             <h5><a href="{% url 'dashboard'%}" target="_blank">Графики заказов</a></h5>
                         {% endif %}
-                    </div></a></li>
-                <li><a href="#">Something else here</a></li>
+                    </div>
+                </a></li>
+                <li><a href="#">
+                    <div class="text-center">
+                        {% if user.is_superuser %}
+                            <h5><a href="{% url 'download_products'%}" target="_blank">Downdown</a></h5>
+                        {% endif %}
+                    </div>
+                </a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Nav header</li>
                 <li><a href="#">Separated link</a></li>

@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     #external packages
     'django_summernote',
     'utils',
-    'emails'
+    'emails',
+    'import_export'
 ]
 
 MIDDLEWARE = [
@@ -141,8 +142,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
 
 # Е-мейл настройки для рассылки по почте
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = ';'
-EMAIL_HOST_PASSWORD = 'o'
+EMAIL_HOST_USER = 'Ec'
+EMAIL_HOST_PASSWORD = 'e111'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 

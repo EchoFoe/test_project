@@ -1,6 +1,10 @@
 from django.contrib import admin
 from django.template.defaultfilters import truncatechars
 from .models import *
+from import_export.admin import ImportExportActionModelAdmin
+from import_export import resources
+from import_export import fields
+from import_export.widgets import ForeignKeyWidget
 
 class ProductImageInline(admin.TabularInline):#создание поля для картинки
     model = ProductImage
@@ -17,10 +21,29 @@ class ProductImageInline(admin.TabularInline):#создание поля для 
 
     admin.site.register(ProductCategory, ProductCategoryAdmin)
 
-class ProductAdmin (admin.ModelAdmin):#создание поля для продуктадмин
-    # list_display = ['description_S']
-    # list_display = [field.name for field in Product._meta.fields]
-    list_display = ['id','name', 'price','discount', 'category', 'description_S', 'is_active', 'created', 'updated']
+# class ProductAdmin (admin.ModelAdmin):#создание поля для продуктадмин
+#     # list_display = ['description_S']
+#     # list_display = [field.name for field in Product._meta.fields]
+#     list_display = ['id','name', 'price','discount', 'category', 'description_S', 'is_active', 'created', 'updated']
+#     inlines = [ProductImageInline]
+#     list_filter = ['category']#фильтр по категориям
+#     search_fields = ['name','id']#поисковик по имени/айди
+#     class Meta:
+#         model = Product
+# admin.site.register(Product, ProductAdmin)
+class ProductResource(resources.ModelResource):
+    category = fields.Field(column_name='category',
+                            attribute='category', widget=ForeignKeyWidget(ProductCategory, 'name'))
+    class Meta:
+        model = Product
+        # fields = [field.name for field in Product._meta.fields if field.name != "id"]
+        # exclude = ['id']
+        # import_id_fields = ['uuid']
+
+
+class ProductAdmin (ImportExportActionModelAdmin):#создание поля для продуктадмин
+    resource_class = ProductResource
+    list_display = [field.name for field in Product._meta.fields if field.name != "id"]
     inlines = [ProductImageInline]
     list_filter = ['category']#фильтр по категориям
     search_fields = ['name','id']#поисковик по имени/айди
