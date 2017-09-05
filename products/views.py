@@ -19,11 +19,13 @@ def download_products(request):
     if request.POST:
         print(request.POST)
         print(request.FILES)
-        file = request.FILES['file']
-        uploading_file = UploadingProducts({"file": file})
+        file = request.FILES['file']#этот file прописан download_products.html
+        uploading_file = UploadingProducts({"file": file})#потом файл передаем в класс UploadingProducts
         if uploading_file:
-            messages.success(request, 'Успешная загрузка')
+            messages.success(request, 'Успешная загрузка')#Этот нотификейшен отображается за счет
+            # errors_notification.html - if 'succes' in message.tags
         else:
-            messages.error(request, 'Ошибка при загрузке!')
+            messages.error(request, 'Ошибка при загрузке!')#Этот нотификейшен отображается за счет
+            # errors_notification.html - if 'error' in message.tags
     return render(request, 'products/download_products.html', locals())
 
