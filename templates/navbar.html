@@ -35,36 +35,47 @@
                     <span class="glyphicon glyphicon-wrench"></span>
                     Ремонт </a>
             </li>
+{#Выпадающее меню для администратора интернет-магазина с функционалом#}
+          {% if user.is_superuser %}
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown<span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-cog"></span>
+                  Меню для администратора<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">
                     <div class="text-center">
                         {% if user.is_superuser %}
-                            <h5><a href="{% url 'admin_orders'%}" target="_blank">Смотреть все заказы</a></h5>
-                        {% endif %}
-                    </div>
-                </a></li>
-                <li><a href="#"><div class="text-center">
-                        {% if user.is_superuser %}
-                            <h5><a href="{% url 'dashboard'%}" target="_blank">Графики заказов</a></h5>
-                        {% endif %}
-                    </div>
-                </a></li>
-                <li><a href="#">
-                    <div class="text-center">
-                        {% if user.is_superuser %}
-                            <h5><a href="{% url 'download_products'%}" target="_blank">Downdown</a></h5>
+                            <h5><a href="{% url 'admin_orders'%}" target="_blank"><span class="glyphicon glyphicon-eye-open"></span>
+                                   Смотреть все заказы</a></h5>
                         {% endif %}
                     </div>
                 </a></li>
                 <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
+                <li><a href="#">
+                    <div class="text-center">
+                        {% if user.is_superuser %}
+                            <h5><a href="{% url 'dashboard'%}" target="_blank"><span class="glyphicon glyphicon-stats"></span>
+                                Графики заказов</a></h5>
+                        {% endif %}
+                    </div>
+                </a></li>
+              <li role="separator" class="divider"></li>
+                <li><a href="#">
+                    <div class="text-center">
+                        {% if user.is_superuser %}
+                            <h5><a href="{% url 'download_products'%}" target="_blank"><span class="glyphicon glyphicon-cloud-upload"></span></span>
+                                   Загрузчик товаров из Excel</a></h5>
+                        {% endif %}
+                    </div>
+                </a></li>
+{#                <li role="separator" class="divider"></li>#}
+{#                <li class="dropdown-header">Nav header</li>#}
+{#                <li><a href="#">Separated link</a></li>#}
+{#                <li><a href="#">One more separated link</a></li>#}
               </ul>
             </li>
+          {% endif %}
           </ul>
+{#Выпадающее меню для КОРЗИНЫ ЗАКАЗОВ#}
           <ul class="nav navbar-nav navbar-right">
             <li>
 {#                   <form id="form_buying_product" action="{% url 'basket_adding' %}">{% csrf_token %}#}
