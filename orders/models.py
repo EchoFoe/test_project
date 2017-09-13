@@ -37,6 +37,7 @@ class Order(models.Model):#класс заказ
     def save(self, *args, **kwargs):
             super(Order, self).save(*args, **kwargs)
 
+@disable_for_loaddata
 def order_post_save(sender, instance, created, **kwargs):
     pass
 # order=instance
