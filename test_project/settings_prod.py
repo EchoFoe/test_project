@@ -1,5 +1,6 @@
 DEBUG = False
-ALLOWED_HOSTS = ['138.68.69.180']
+ALLOWED_HOSTS = ['138.68.69.180',
+                 '.voodoo-mobile.ru']
 
 
 DATABASES = {
