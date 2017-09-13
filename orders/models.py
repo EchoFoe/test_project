@@ -2,6 +2,7 @@ from django.db import models
 from products.models import Product
 from django.db.models.signals import post_save
 from django.contrib.auth.models import User
+from utils.main import disable_for_loaddata
 
 
 class Status(models.Model):#поле статуса
@@ -71,6 +72,7 @@ class ProductInOrder(models.Model):#класс товар (в заказе)
             self.total_price = int(self.nmb) * self.price_per_item
             super(ProductInOrder, self).save(*args, **kwargs)
 
+@disable_for_loaddata
 def product_in_order_post_save (sender, instance, created, **kwargs):
 
     order = instance.order
