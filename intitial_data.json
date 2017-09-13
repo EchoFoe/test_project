@@ -15,14 +15,14 @@
       "model": "permission"
    }
 },
-//{
-//   "model": "contenttypes.contenttype",
-//   "pk": 3,
-//   "fields": {
-//      "app_label": "auth",
-//      "model": "group"
-//   }
-//},
+{
+   "model": "contenttypes.contenttype",
+   "pk": 3,
+   "fields": {
+      "app_label": "auth",
+      "model": "group"
+   }
+},
 {
    "model": "contenttypes.contenttype",
    "pk": 4,
