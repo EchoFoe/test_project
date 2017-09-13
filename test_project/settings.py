@@ -152,6 +152,6 @@ FROM_EMAIL = "etoecho@gmail.com"
 EMAIL_ADMIN = "waflegka@gmail.com"
 
 try:
-    from .settings_prod import *
+    from .settings_prod1 import *
 except:
     pass
