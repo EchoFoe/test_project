@@ -75,6 +75,11 @@ $(document).ready(function () {
       $('.basket-items').removeClass('hidden');
   };
 
+      $('.basket-container').click(function(){
+		$('.basket-container').slideToggle(250);
+		return false;
+              });
+
       $('.basket-container').on('click', function (e) {
         e.preventDefault();
         showingBasket();
@@ -83,6 +88,10 @@ $(document).ready(function () {
       $('.basket-container').mouseover(function () {
         showingBasket();
       });
+
+      // $('.basket-container').mouseleave(function () {
+      //   showingBasket();
+      // });
 
       // $('.basket-container').mouseout(function () {
       //   showingBasket();
