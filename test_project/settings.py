@@ -151,7 +151,7 @@ EMAIL_USE_TLS = True
 FROM_EMAIL = "etoecho@gmail.com"
 EMAIL_ADMIN = "waflegka@gmail.com"
 
-try:
-    from .settings_prod1 import *
-except:
-    pass
+# try:
+#     from .settings_prod1 import *
+# except:
+#     pass
