@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'fixture_magic',
 
     'landing',
     'orders',
@@ -45,7 +46,8 @@ INSTALLED_APPS = [
     #external packages
     'django_summernote',
     'utils',
-    'emails'
+    'emails',
+    'import_export'
 ]
 
 MIDDLEWARE = [
@@ -56,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'test_project.urls'
@@ -127,11 +130,11 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
+# static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS =(os.path.join(BASE_DIR,"static","static_dev"),)
+STATICFILES_DIRS =(os.path.join(BASE_DIR, "static", "static_dev"),)
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static", "static_prod")
 
@@ -141,13 +144,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
 
 # Е-мейл настройки для рассылки по почте
 EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = ';'
-EMAIL_HOST_PASSWORD = 'o'
+EMAIL_HOST_USER = 'Ech3'
+EMAIL_HOST_PASSWORD = '3111'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 FROM_EMAIL = "etoecho@gmail.com"
-EMAIL_ADMIN = "aspirpd@gmail.com"
+EMAIL_ADMIN = "waflegka@gmail.com"
 
 try:
     from .settings_prod import *

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-lg-offset-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-body text-center">
+                            <h3>
+                                Загрузка товаров из файла
+                            </h3>
+                            <p>
+                                Загрузите файл с информацией о товарах
+                            </p>
+                            <hr>
+                            <form method="post" action="" enctype="multipart/form-data">{% csrf_token %}
+                                <div class="form-group">
+                                    <input type="file" name="file">
+                                </div>
+                                <button type="submit" class="btn btn-primary">
+                                    <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                    Загрузите файл</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% endblock %}

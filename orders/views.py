@@ -159,7 +159,7 @@ def admin_orders(request):
         order_ids = [order["id"] for order in orders]
 
         products_in_order = ProductInOrder.objects.filter(is_active=True, order_id__in=order_ids)\
-            .values("order_id","product__name","nmb","price_per_item","total_price")
+            .values("order_id","product__name","nmb","price_per_item","total_price", "order__Status__name")
 
         def merging_dicts(l1, l2, key1, key2):#делаем словарь
             merged={}

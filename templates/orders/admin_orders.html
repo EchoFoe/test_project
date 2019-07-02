@@ -24,6 +24,12 @@
                             <td>
                                 Товары в заказе
                             </td>
+                            <td>
+                                Общая сумма заказа
+                            </td>
+                            <td>
+                                Статус заказа
+                            </td>
                         </tr>
                     </thead>
                     <tbody>
@@ -39,6 +45,17 @@
                                             <li>
                                                 {{ product.product__name }}:{{ product.nmb }}шт. по
                                             {{ product.price_per_item }}={{ product.total_price }}
+                                            </li>
+                                        {% endfor %}
+                                    </ol>
+                                </td>
+                                <td>{{ item.total_price }}</td>
+
+                                <td>
+                                    <ol>
+                                        {% for product in item.products %}
+                                            <li>
+                                                {{ product.order__Status__name }}
                                             </li>
                                         {% endfor %}
                                     </ol>

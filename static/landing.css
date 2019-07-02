@@ -1,0 +1,49 @@
+
+/*.title{*/
+    /*color: #020200;*/
+    /*text-align: center;*/
+/*}*/
+
+html, body{
+    height: 100%;
+    max-height: 100%;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+.top-container{
+    padding-top: 10%;
+}
+
+.general-container{
+    background: url('img/img_1.jpg');
+    height: 100%;
+}
+
+.general-container form{
+    margin-top: 30px;
+    /*width: 500px;*/
+}
+
+.general-container form label{
+    font-weight: 100;
+    color: #ffcbe0;
+}
+
+.btn-orange:focus{
+    background-color: #ff4c05;
+    border: none;
+}
+
+.btn-orange:hover{
+    background-color: #3afff7;
+    border: none;
+}
+
+
+.title{
+    text-align: center;
+    color: #ffcbe0;
+    font-weight: 100;
+    line-height: 50px;
+}

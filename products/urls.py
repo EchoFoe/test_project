@@ -19,4 +19,5 @@ from products import views
 urlpatterns = [
     # url(r'^landing/', views.landing, name='landing'),
     url(r'^products/(?P<product_id>\w+)/$', views.product, name='product'),
+    url(r'^products/$', views.download_products, name='download_products'),
 ]
