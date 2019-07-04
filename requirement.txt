@@ -1,4 +1,4 @@
-bootstrapper==1.0.0
+
 diff-match-patch==20121119
 Django==1.11.1
 django-fixture-magic==0.1.3
