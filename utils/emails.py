@@ -31,7 +31,7 @@ class SendingEmail(object):
             # прилагается (админовский)
 
         elif type_id == 2:#означает, что если не админ, то покупателю уведомление пойдет следующее:
-            subject = 'Ваш заказ в магазине "VodooMobile" получен!'
+            subject = 'Ваш заказ в магазине "Neformat-inc" получен!'
             message = get_template('emails_templates/order_notification_customer.html').render(vars)#хтмл шаблон
             # прилагается (для заказчика)
 
