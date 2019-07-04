@@ -21,7 +21,7 @@ class Product(models.Model):#поле для продукта
     price = models.DecimalField(max_digits=10, decimal_places=2, default=True)  # поле для цена
     discount = models.IntegerField(default=0)# поле для скидки
     price_with_discount = models.DecimalField(max_digits=10, decimal_places=2, default=True)
-    category = models.ForeignKey(ProductCategory, blank=True, null=True, default=True)
+    category = models.ForeignKey(ProductCategory, blank=True, null=True, default=True,on_delete=models.CASCADE)
     short_description = models.TextField(max_length=50, blank=True, null=True, default=None,)  # краткое описание для продукта
     description = models.TextField(blank=True, null=True, default=None)#описание для продукта
     is_active = models.BooleanField(default=True)#активность/неактивность проудкта
@@ -44,7 +44,7 @@ class Product(models.Model):#поле для продукта
         verbose_name_plural = 'Товары'
 
 class ProductImage(models.Model):#класс фотография
-    Product = models.ForeignKey(Product, blank=True, null=True, default=None)#поле для продукта
+    Product = models.ForeignKey(Product, blank=True, null=True, default=None, on_delete=models.CASCADE)#поле для продукта
     image = models.ImageField(upload_to='products_images/')#директория для фотографии продукта
     is_main = models.BooleanField(default=False)  # активность/неактивность товара
     is_active = models.BooleanField(default=True)#активность/неактивность товара
@@ -75,7 +75,7 @@ class ForRepairs(models.Model):#поле для ремонта
     price = models.DecimalField(max_digits=10, decimal_places=2, default=True)  #цена для ремонта
     discount = models.IntegerField(default=0)# поле для скидки
     price_with_discount = models.DecimalField(max_digits=10, decimal_places=2, default=True)
-    category = models.ForeignKey(ForRepairsCategory, blank=True, null=True, default=True)
+    category = models.ForeignKey(ForRepairsCategory, blank=True, null=True, default=True,on_delete=models.CASCADE)
     short_description = models.TextField(max_length=50, blank=True, null=True, default=None,)#краткое описание для продукта
     description = models.TextField(blank=True, null=True, default=None)#описание для продукта
     is_active = models.BooleanField(default=True)#активность/неактивность проудкта

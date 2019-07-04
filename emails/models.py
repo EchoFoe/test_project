@@ -14,8 +14,8 @@ class EmailType(models.Model):
         verbose_name_plural = 'Типы е-мейлов'
 
 class EmailSendingFact (models.Model):
-    type = models.ForeignKey(EmailType)
-    order = models.ForeignKey("orders.Order", blank=True, null=True, default=None)
+    type = models.ForeignKey(EmailType, on_delete=models.CASCADE)
+    order = models.ForeignKey("orders.Order", blank=True, null=True, default=None, on_delete=models.CASCADE)
     email = models.EmailField()
     created = models.DateTimeField(auto_now_add=True, auto_now=False)
     update = models.DateTimeField(auto_now_add=False, auto_now=True)

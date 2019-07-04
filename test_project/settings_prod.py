@@ -1,14 +1,13 @@
 DEBUG = False
-ALLOWED_HOSTS = ['138.68.69.180',
-                 '.voodoo-mobile.ru']
+ALLOWED_HOSTS = ['*']
 
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db2',
-        'USER': 'voodoo-mobile',
-        'PASSWORD': 'rarara',
+        'NAME': 'db1',
+        'USER': 'neformat-inc',
+        'PASSWORD': 'rarara111',
         'HOST': 'localhost',
         'PORT': '',
 

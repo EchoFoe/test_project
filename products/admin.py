@@ -81,13 +81,4 @@ class ForRepairsAdmin (admin.ModelAdmin):#создание поля для пр�
         model = ForRepairs
 admin.site.register(ForRepairs, ForRepairsAdmin)
 
-# class ProductAdmin (admin.ModelAdmin):#создание поля для продуктадмин
-#     # list_display = ['description_S']
-#     # list_display = [field.name for field in Product._meta.fields]
-#     list_display = ['id','name', 'price','discount', 'category', 'description_S', 'is_active', 'created', 'updated']
-#     inlines = [ProductImageInline]
-#     list_filter = ['category']#фильтр по категориям
-#     search_fields = ['name','id']#поисковик по имени/айди
-#     class Meta:
-#         model = Product
-# admin.site.register(Product, ProductAdmin)
+

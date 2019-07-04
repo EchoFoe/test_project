@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django_summernote',
     'utils',
     'emails',
-    'import_export'
+    'import_export',
 ]
 
 MIDDLEWARE = [
@@ -142,15 +142,50 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
 
-# Е-мейл настройки для рассылки по почте
-EMAIL_HOST = 'smtp.sendgrid.net'
-EMAIL_HOST_USER = 'Ech3'
-EMAIL_HOST_PASSWORD = '3111'
+
+EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
+EMAIL_HOST_USER = "ne"
+EMAIL_HOST_PASSWORD = "ra"
 EMAIL_USE_TLS = True
 
-FROM_EMAIL = "etoecho@gmail.com"
-EMAIL_ADMIN = "waflegka@gmail.com"
+FROM_EMAIL = "neformatinc@gmail.com"
+EMAIL_ADMIN = "neformatinc@gmail.com"
+
+# SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+#
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'echorisestudio@gmail.com'
+# EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+#
+# FROM_EMAIL = "echorisestudio@gmail.com"
+# EMAIL_ADMIN = "echorisestudio@gmail.com"
+
+# # Е-мейл настройки для рассылки по почте
+# # EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+# # SENDGRID_API_KEY = os.environ["SENDGRID_API_KEY"]
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'apikey'
+# # EMAIL_HOST_PASSWORD = 'flocksfoe111'
+# EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+
+# SENDGRID_API_KEY = os.getenv('SENDGRID_API_KEY')
+#
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'EchoFoe'
+# EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+#
+# FROM_EMAIL = "aspirpd@gmail.com"
+# # EMAIL_ADMIN = "waflegka@gmail.com"
+# EMAIL_ADMIN = "aspirpd@gmail.com"
 
 try:
     from .settings_prod import *
