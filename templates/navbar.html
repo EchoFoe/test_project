@@ -30,11 +30,11 @@
                       Корзина товаров </a>
               </li>
 {#Переход на страницу с ремонтом #}
-            <li class="active active-click">
-                <a href="{% url 'repairs'%}" class="">
-                    <span class="glyphicon glyphicon-wrench"></span>
-                    Ремонт </a>
-            </li>
+{#            <li class="active active-click">#}
+{#                <a href="{% url 'repairs'%}" class="">#}
+{#                    <span class="glyphicon glyphicon-wrench"></span>#}
+{#                    Ремонт </a>#}
+{#            </li>#}
 {#Выпадающее меню для администратора интернет-магазина с функционалом#}
           {% if user.is_superuser %}
             <li class="dropdown">
